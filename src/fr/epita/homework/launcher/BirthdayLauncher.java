@@ -23,7 +23,6 @@ public class BirthdayLauncher {
 //			System.out.println(input.equals("0"));
 //			 if (input == "0") {
 			if (input.equals("0")) {
-				System.out.println("I am in if");
 				break;
 			}
 
@@ -32,6 +31,10 @@ public class BirthdayLauncher {
 		
 		if (! friends.isEmpty()) {
 			Birthday friendsArray = new Birthday(friends);
+			
+			for (String friend: friendsArray.manipulateDates()) {
+				System.out.println(friend);
+			}
 		}
 
 		System.out.println("Exit from loop");

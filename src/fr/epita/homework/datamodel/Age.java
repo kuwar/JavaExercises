@@ -8,9 +8,9 @@ public class Age {
 
 	private int totalDays = 0;
 
-	private int todaysDays = 4;
-	private int todaysMonths = 12;
-	private int todaysYear = 2019;
+	private int todaysDays = 0;
+	private int todaysMonths = 0;
+	private int todaysYear = 0;
 
 	private int livedYears = 0;
 	private int livedMonths = 0;
@@ -20,6 +20,10 @@ public class Age {
 		this.birthYears = birthYears;
 		this.birthMonths = birthMonths;
 		this.birthDays = birthDays;
+		
+		this.todaysYear = todaysYear;
+		this.todaysMonths = todaysMonths;
+		this.todaysDays = todaysDays;
 
 		this.calculateDays();
 		this.setDates();
@@ -88,16 +92,22 @@ public class Age {
 	}
 
 	public int getNextBirthday() {
+		System.out.println("tday" + this.todaysDays);
+		System.out.println("tmonth" + this.todaysMonths);
+		
 		int currentDays = absoluteDay(this.todaysMonths, this.todaysDays);
 		int birthDayDays = absoluteDay(this.birthMonths, this.birthDays);
 
 		int nextBirthdays = (birthDayDays - currentDays) >= 0 ? (birthDayDays - currentDays)
 				: 365 - (currentDays - birthDayDays);
-		
+		   
 		return nextBirthdays;
 	}
 
 	public int absoluteDay(int month, int day) {
+		System.out.println("day" + day);
+		System.out.println("months" + month);
+		System.out.println(this.todaysYear + month + day);
 		// { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		int[] days = { 0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
 
