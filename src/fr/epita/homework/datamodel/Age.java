@@ -91,10 +91,7 @@ public class Age {
 		this.livedDays = livedDays;
 	}
 
-	public int getNextBirthday() {
-		System.out.println("tday" + this.todaysDays);
-		System.out.println("tmonth" + this.todaysMonths);
-		
+	public int getNextBirthday() {		
 		int currentDays = absoluteDay(this.todaysMonths, this.todaysDays);
 		int birthDayDays = absoluteDay(this.birthMonths, this.birthDays);
 
@@ -105,9 +102,6 @@ public class Age {
 	}
 
 	public int absoluteDay(int month, int day) {
-		System.out.println("day" + day);
-		System.out.println("months" + month);
-		System.out.println(this.todaysYear + month + day);
 		// { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		int[] days = { 0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
 

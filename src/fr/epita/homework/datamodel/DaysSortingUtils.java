@@ -1,21 +1,28 @@
 package fr.epita.homework.datamodel;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class DaysSortingUtils {
 
-	public List<String> sortDays(List<String> friendsList) {
-		List<String> sortedData = new ArrayList<String>();
+	public Map<String, Integer> sortByDays(Map<String, Integer> friendsList) {
+		Map<String, Integer> sortedData = new LinkedHashMap<String, Integer>();
 
-		for (int i = 0; i < friendsList.size(); i = i + 2) {
-			for (int j = 2; j < friendsList.size(); j = i + 2) {
-				int iFriendBirthDay = Integer.parseInt(friendsList.get(i + 1));
-				int jFriendBirthDay = Integer.parseInt(friendsList.get(j + 1));
-			}
-		}
+//		for (Map.Entry<String, Integer> friendI: friendsList.entrySet()) {
+//			System.out.println(friendI.getKey() + "---" + friendI.getValue());
+//		}
+
+		sortedData = friendsList.entrySet().stream()
+        .sorted(Map.Entry.comparingByValue())
+        .collect(Collectors.toMap(
+                Map.Entry::getKey, 
+                Map.Entry::getValue, 
+                (x,y)-> {throw new AssertionError();},
+                LinkedHashMap::new
+        ));
 
 		return sortedData;
 	}
-
 }

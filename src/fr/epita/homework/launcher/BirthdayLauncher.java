@@ -2,6 +2,7 @@ package fr.epita.homework.launcher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import fr.epita.homework.datamodel.Birthday;
@@ -28,16 +29,16 @@ public class BirthdayLauncher {
 
 			friends.add(input);
 		}
-		
-		if (! friends.isEmpty()) {
-			Birthday friendsArray = new Birthday(friends);
-			
-			for (String friend: friendsArray.manipulateDates()) {
-				System.out.println(friend);
-			}
-		}
 
-		System.out.println("Exit from loop");
+		if (!friends.isEmpty()) {
+			Birthday friendsArray = new Birthday(friends);
+			Map<String, Integer> sortedFriendsList = friendsArray.manipulateDates();
+			
+			for (Map.Entry<String, Integer> friendI : sortedFriendsList.entrySet()) {
+				System.out.println(friendI.getKey() + " in " + friendI.getValue() + " days.");
+			}
+
+		}
 
 		scanner.close();
 	}
