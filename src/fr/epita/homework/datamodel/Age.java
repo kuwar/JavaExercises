@@ -1,5 +1,9 @@
 package fr.epita.homework.datamodel;
 
+/**
+ * @author kuwar
+ *
+ */
 public class Age {
 
 	private int birthYears = 0;

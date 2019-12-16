@@ -4,6 +4,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author kuwar
+ *
+ */
 public class Birthday {
 	private List<String> details;
 

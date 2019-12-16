@@ -9,6 +9,9 @@ import fr.epita.homework.datamodel.Birthday;
 
 public class BirthdayLauncher {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);

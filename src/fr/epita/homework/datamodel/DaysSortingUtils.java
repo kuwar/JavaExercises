@@ -4,6 +4,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * @author kuwar
+ *
+ */
 public class DaysSortingUtils {
 
 	public Map<String, Integer> sortByDays(Map<String, Integer> friendsList) {
