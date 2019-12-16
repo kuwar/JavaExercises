@@ -33,7 +33,7 @@ public class BirthdayLauncher {
 		if (!friends.isEmpty()) {
 			Birthday friendsArray = new Birthday(friends);
 			Map<String, Integer> sortedFriendsList = friendsArray.manipulateDates();
-			
+
 			for (Map.Entry<String, Integer> friendI : sortedFriendsList.entrySet()) {
 				System.out.println(friendI.getKey() + " in " + friendI.getValue() + " days.");
 			}

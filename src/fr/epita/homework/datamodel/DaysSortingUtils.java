@@ -1,6 +1,5 @@
 package fr.epita.homework.datamodel;
 
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -14,14 +13,10 @@ public class DaysSortingUtils {
 //			System.out.println(friendI.getKey() + "---" + friendI.getValue());
 //		}
 
-		sortedData = friendsList.entrySet().stream()
-        .sorted(Map.Entry.comparingByValue())
-        .collect(Collectors.toMap(
-                Map.Entry::getKey, 
-                Map.Entry::getValue, 
-                (x,y)-> {throw new AssertionError();},
-                LinkedHashMap::new
-        ));
+		sortedData = friendsList.entrySet().stream().sorted(Map.Entry.comparingByValue())
+				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (x, y) -> {
+					throw new AssertionError();
+				}, LinkedHashMap::new));
 
 		return sortedData;
 	}

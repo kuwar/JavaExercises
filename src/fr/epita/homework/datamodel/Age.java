@@ -20,7 +20,7 @@ public class Age {
 		this.birthYears = birthYears;
 		this.birthMonths = birthMonths;
 		this.birthDays = birthDays;
-		
+
 		this.todaysYear = todaysYear;
 		this.todaysMonths = todaysMonths;
 		this.todaysDays = todaysDays;
@@ -91,13 +91,13 @@ public class Age {
 		this.livedDays = livedDays;
 	}
 
-	public int getNextBirthday() {		
+	public int getNextBirthday() {
 		int currentDays = absoluteDay(this.todaysMonths, this.todaysDays);
 		int birthDayDays = absoluteDay(this.birthMonths, this.birthDays);
 
 		int nextBirthdays = (birthDayDays - currentDays) >= 0 ? (birthDayDays - currentDays)
 				: 365 - (currentDays - birthDayDays);
-		   
+
 		return nextBirthdays;
 	}
 
